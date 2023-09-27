@@ -164,9 +164,6 @@ export const StyledButton = styled.button<ButtonStylingProps & { children: React
       ${
         !props.isLoading &&
         `
-          &:hover {
-            background: ${darken(0.05, color.primary)};
-          }
           &:active {
             box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
           }
@@ -381,8 +378,8 @@ export interface ButtonStylingProps {
   isUnclickable?: boolean;
   containsIcon?: boolean;
   disabled?: boolean;
-  size?: typeof SIZES[keyof typeof SIZES];
-  appearance?: typeof APPEARANCES[keyof typeof APPEARANCES];
+  size?: (typeof SIZES)[keyof typeof SIZES];
+  appearance?: (typeof APPEARANCES)[keyof typeof APPEARANCES];
 }
 
 export interface ButtonConfigProps {
